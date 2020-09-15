@@ -1,8 +1,8 @@
 name: fabexdateformatter
 description: Best Package to get customised date format
 version: 0.0.1
-author: Fathah Crg <>
-homepage:
+author: Fathah Crg<abdulfathahkodag@gmail.com>
+homepage: https://github.com/fathah/fabex_date_formatter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl:
 
 dev_dependencies:
   flutter_test:
