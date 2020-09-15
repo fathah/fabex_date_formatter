@@ -4,54 +4,46 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class FabexFormatter{
-/*
-* You can call several useful methods through the FabexFormatter Class
-* */
+
+/// You can call several useful methods through the FabexFormatter Class
+
   String timeOfDayToJM(TimeOfDay tod) {
-    /*
-    * Convert TimeOfDay to time
-    * Example: ```TimeOfDay(22, 30)``` returns ```10:30 PM```
-    * */
+    
+    /// Convert TimeOfDay to time
+    /// Example: ```TimeOfDay(22, 30)``` returns ```10:30 PM```
+    
     final now = new DateTime.now();
     final dt = DateTime(now.year, now.month, now.day, tod.hour, tod.minute);
-    final format = DateFormat.jm(); //"6:00 AM"
+    final format = DateFormat.jm(); ///"6:00 AM"
     return format.format(dt);
   }
 
 
   String timeOfDayToDateTimeString(TimeOfDay tod) {
-    /*
-    * Convert TimeOfDay to Date and return as a String
-    * */
+    /// Convert TimeOfDay to Date and return as a String
     final now = new DateTime.now();
     final dt = DateTime(now.year, now.month, now.day, tod.hour, tod.minute);
     return dt.toString();
   }
 
   TimeOfDay dateTimeNowToTimeOfDay(String date) {
-    /*
-    * Convert TimeOfDay to Date and return as a String
-    * */
+    /// Convert TimeOfDay to Date and return as a String
     final now = DateTime.parse(date);
     final dt = DateTime(now.year, now.month, now.day, now.hour, now.minute);
     return TimeOfDay.fromDateTime(dt);
   }
 
   TimeOfDay dateTimeToTimeOfDay(DateTime date) {
-    /*
-    * Convert DateTime to TimeOfDay
-    * */
+    /// Convert DateTime to TimeOfDay
     final dt = DateTime(date.year, date.month, date.day, date.hour, date.minute);
     return TimeOfDay.fromDateTime(dt);
   }
 
   String dateTimeToStringDate(DateTime date) {
-    /*
-    * Convert DateTime to Time and date.
-    * Return as String.
-    * One @required parameter is to enter in ```DateTime``` format.
-    * Example: ```DateTime(2020, 10, 15, 22, 30, 0000)``` returns ```10:30 PM - 15/10/2020```
-    * */
+    /// Convert DateTime to Time and date.
+    /// Return as String.
+    /// One @required parameter is to enter in ```DateTime``` format.
+    /// Example: ```DateTime(2020, 10, 15, 22, 30, 0000)``` returns ```10:30 PM - 15/10/2020```
     final format = DateFormat.jm();
     String time = format.format(date);
     String resdDate = DateFormat('dd/MM/yyyy').format(date);
@@ -60,21 +52,17 @@ class FabexFormatter{
 
 
   DateTime firestoreTimeToDateTime(firebasDate) {
-    /*
-    * Convert Firebase Firestore Time to flutter DateTime.
-    * Return as DateTime.
-    * Example: ```September 13 2020 at 6:36:56 PM``` returns ```DateTime(2020, 09, 13, 06, 36, 5600)```
-    * */
+    /// Convert Firebase Firestore Time to flutter DateTime.
+    /// Return as DateTime.
+    /// Example: ```September 13 2020 at 6:36:56 PM``` returns ```DateTime(2020, 09, 13, 06, 36, 5600)```
     return DateTime.parse(firebasDate.toDate().toString());
 
   }
 
 
   List firestoreTimeToMonthYear(firebasDate) {
-    /*
-    * Convert Firebase Firestore Time to flutter DateTime and returns month and year as list.
-    *  Example: ```September 13 2020 at 6:36:56 PM``` returns ```[2020, 09, 15]```
-    * */
+    /// Convert Firebase Firestore Time to flutter DateTime and returns month and year as list.
+    ///  Example: ```September 13 2020 at 6:36:56 PM``` returns ```[2020, 09, 15]```
     DateTime parsed = DateTime.parse(firebasDate.toDate().toString());
     String year = DateFormat('yyyy').format(parsed);
     String month = DateFormat('MM').format(parsed);
@@ -83,10 +71,8 @@ class FabexFormatter{
   }
 
   int getHourAndMinute(String dbDate) {
-    /*
-    * Pass String DateTime as 1 @required parameter and it returns Hour and minute concatenated.
-    * Eg: Pass "2020-09-05 08:00:00.000" and get 800 aS response.
-    * */
+    /// Pass String DateTime as 1 @required parameter and it returns Hour and minute concatenated.
+    /// Eg: Pass "2020-09-05 08:00:00.000" and get 800 aS response.
     DateTime parsed = DateTime.parse(dbDate);
     String hour = DateFormat('H').format(parsed);
     String minute = DateFormat('mm').format(parsed);
@@ -95,16 +81,14 @@ class FabexFormatter{
   }
 
   String stringDateTimeToStringDate(String date) {
-    /*
-    * Pass String DateTime as 1 @required parameter and it returns date.
-    * Eg: Pass "2020-09-05 08:00:00.000" and get "05/09/2020"
-    * */
+    /// Pass String DateTime as 1 @required parameter and it returns date.
+    /// Eg: Pass "2020-09-05 08:00:00.000" and get "05/09/2020"
     DateTime parsed = DateTime.parse(date);
     String resdDate = DateFormat('dd/MM/yyyy').format(parsed);
     return resdDate;
   }
   String getMonthName(int monthNumber) {
-    //Get the name of the entered month
+    ///Get the name of the entered month
     switch (monthNumber) {
       case 1:
         return "January";
@@ -159,9 +143,7 @@ class FabexFormatter{
   }
 
   String getPrevMonth(int currentMonth) {
-    /*
-    * Enter the month number as month
-    * */
+    /// Enter the month number as month
 
     int finalMnth = currentMonth - 1;
     if (finalMnth < 10) {
@@ -179,7 +161,7 @@ class FabexFormatter{
     }
   }
   String getCurrentMonthName() {
-    //Get the name of the current month
+    ///Get the name of the current month
     DateTime now = DateTime.now();
     String month = DateFormat('MM').format(now);
     int  monthNumber = int.parse(month);
