@@ -27,7 +27,7 @@ class FabexFormatter{
   }
 
   TimeOfDay dateTimeNowToTimeOfDay(String date) {
-    /// Convert TimeOfDay to Date and return as a String
+    /// Convert TimeOfDay to Date and return as TimeOfDay
     final now = DateTime.parse(date);
     final dt = DateTime(now.year, now.month, now.day, now.hour, now.minute);
     return TimeOfDay.fromDateTime(dt);
@@ -132,6 +132,7 @@ class FabexFormatter{
   }
 
   String prevYear(currentYear) {
+    // Get the Previous Year
     int curYr;
     if(currentYear is String){
       curYr = int.parse(currentYear);
@@ -143,7 +144,7 @@ class FabexFormatter{
   }
 
   String getPrevMonth(int currentMonth) {
-    /// Enter the month number as month
+    /// Enter the month and get the previous month
 
     int finalMnth = currentMonth - 1;
     if (finalMnth < 10) {
@@ -154,6 +155,7 @@ class FabexFormatter{
   }
 
   int getPreviousMonthNum(int currentMonth) {
+    //Get the previous month
     if (currentMonth == 1) {
       return 12;
     } else {

@@ -1,7 +1,6 @@
 name: fabexdateformatter
 description: Best Package to get customised date format
-version: 0.0.2
-author: Fathah Crg<abdulfathahkodag@gmail.com>
+version: 0.0.3
 homepage: https://github.com/fathah/fabex_date_formatter
 
 environment:
