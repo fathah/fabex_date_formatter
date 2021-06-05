@@ -1,3 +1,8 @@
+## [1.0.5]
+Migrated sub-packages to Sound Null Safety
+Updated Example
+06/05/2021
+
 ## [1.0.4]
 Migrated to Sound Null Safety
 Added Example
