@@ -1,3 +1,7 @@
+## [1.0.4]
+Migrated to Sound Null Safety
+06/05/2021
+
 ## [0.0.4]
 Added Description
 9/21/2020
