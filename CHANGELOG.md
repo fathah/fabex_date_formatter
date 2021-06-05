@@ -1,5 +1,6 @@
 ## [1.0.4]
 Migrated to Sound Null Safety
+Added Example
 06/05/2021
 
 ## [0.0.4]
