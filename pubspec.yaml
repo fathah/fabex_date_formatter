@@ -1,15 +1,15 @@
 name: fabexdateformatter
 description: Fabex Date Formatter is an easy tool to get several functions related to DateTime, TimeOfDay. This package can be used to convert one format to other with a function call.
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/fathah/fabex_date_formatter
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  intl: 0.17.0 
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
